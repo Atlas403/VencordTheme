@@ -1,0 +1,107 @@
+/**
+ * @name Custom Theme
+ * @author Atlus
+ * @version 1.0.0
+ * @description A customized Midnight Discord theme
+ **/
+
+/* IMPORTANT: make sure to enable dark mode in discord settings for the theme to apply properly!!! */
+
+/* Import base Midnight theme */
+@import url('https://refact0r.github.io/midnight-discord/midnight.css');
+
+/* Custom theme configuration */
+:root {
+  /* Font configuration - 'gg sans' is Discord's default font */
+  --font: 'figtree';
+
+  /* Top left corner text */
+  --corner-text: '';
+
+  /* Status indicators and window controls */
+  --online-indicator: #a6e3a1;    /* Online status (default: #23a55a) */
+  --dnd-indicator: #f38ba8;       /* Do Not Disturb status (default: #f13f43) */
+  --idle-indicator: #f9e2af;      /* Idle status (default: #f0b232) */
+  --streaming-indicator: #cba6f7; /* Streaming status (default: #593695) */
+
+  /* Accent colors */
+  --accent-1: hsl(267, 84%, 81%); /* Links */
+  --accent-2: hsl(267, 84%, 81%); /* Unread/mention elements */
+  --accent-3: hsl(267, 84%, 81%); /* Accent buttons */
+  --accent-4: hsl(267, 70%, 73%); /* Accent buttons when hovered */
+  --accent-5: hsl(267, 55%, 65%); /* Accent buttons when clicked */
+  
+  /* Mention styling */
+  --mention: hsla(267, 70%, 71%, 0.1);      /* Mentions & mention messages */
+  --mention-hover: hsla(267, 70%, 71%, 0.05); /* Mentions & mention messages when hovered */
+
+  /* Text colors */
+  --text-0: var(--bg-4);           /* Text on colored elements */
+  --text-1: hsl(220, 40%, 95%);    /* Bright text on colored elements */
+  --text-2: hsl(226, 64%, 88%);    /* Headings and important text */
+  --text-3: hsl(228, 24%, 72%);    /* Normal text */
+  --text-4: hsl(230, 13%, 55%);    /* Icon buttons and channels */
+  --text-5: hsl(233, 12%, 39%);    /* Muted channels/chats and timestamps */
+
+  /* Background colors */
+  --bg-1: hsl(220, 15%, 20%);      /* Dark buttons when clicked */
+  --bg-2: hsl(220, 15%, 16%);      /* Dark buttons */
+  --bg-3: hsl(220, 15%, 13%);      /* Spacing, secondary elements */
+  --bg-4: hsl(220, 15%, 10%);      /* Main background color */
+  
+  /* Interactive element states */
+  --hover: hsla(230, 20%, 40%, 0.1);       /* Channels and buttons when hovered */
+  --active: hsla(220, 20%, 40%, 0.2);      /* Channels and buttons when clicked or selected */
+  --message-hover: hsla(220, 0%, 0%, 0.1); /* Messages when hovered */
+
+  /* Spacing and padding */
+  --spacing: 12px;
+
+  /* Animations (can be disabled with Reduced Motion in Discord settings) */
+  --list-item-transition: 0.2s ease;   /* Channels/members/settings hover transition */
+  --unread-bar-transition: 0.2s ease;  /* Unread bar moving into view transition */
+  --moon-spin-transition: 0.4s ease;   /* Moon icon spin */
+  --icon-spin-transition: 1s ease;     /* Round icon button spin (settings, emoji, etc.) */
+
+  /* Border radius for various elements */
+  --roundness-xl: 22px;   /* Big panel outer corners */
+  --roundness-l: 20px;    /* Popout panels */
+  --roundness-m: 16px;    /* Smaller panels, images, embeds */
+  --roundness-s: 12px;    /* Members, settings inputs */
+  --roundness-xs: 10px;   /* Channels, buttons */
+  --roundness-xxs: 8px;   /* Searchbar, small elements */
+
+  /* Direct messages icon configuration */
+  --discord-icon: none;   /* Discord icon (set to 'block' to show) */
+  --moon-icon: block;     /* Moon icon (set to 'none' to hide) */
+  --moon-icon-url: url('https://upload.wikimedia.org/wikipedia/commons/c/c4/Font_Awesome_5_solid_moon.svg');
+  --moon-icon-size: auto;
+
+  /* Filters for uncolorable elements */
+  --login-bg-filter: none;           /* Login background artwork */
+  --green-to-accent-3-filter: none;  /* Add friend page explore icon */
+  --blurple-to-accent-3-filter: none; /* Add friend page school icon */
+}
+
+/* Fix for newer Discord versions - ensure theme applies properly */
+.theme-dark {
+  --background-primary: var(--bg-4);
+  --background-secondary: var(--bg-3);
+  --background-secondary-alt: var(--bg-2);
+  --background-tertiary: var(--bg-3);
+  --channeltextarea-background: var(--bg-2);
+  --interactive-normal: var(--text-4);
+  --interactive-hover: var(--text-3);
+  --interactive-active: var(--text-2);
+}
+
+/* Fix for Vencord compatibility */
+html.theme-dark {
+  --background-primary: var(--bg-4) !important;
+  --background-secondary: var(--bg-3) !important;
+}
+
+/* Ensure custom font applies across the application */
+body, button, input, select, textarea {
+  font-family: var(--font), 'gg sans', sans-serif !important;
+}
